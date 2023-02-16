@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour of DOM</title>
+    <link rel="stylesheet" href="styles/style1.css">
+    
+</head>
+<body>
+    <header>
+        <h1>welcome to my dom</h1>
+    </header>
+    <main>
+        <section class="relation">
+            <h1 class="relationTitle">this is my dom</h1>
+        <ul>
+            <li>mamu</li>
+            <li>chacha</li>
+            <li>vatija</li>
+        </ul>
+        </section>
+        <section class="meal">
+            <h1 id="mealTitle">this is my meal</h1>
+        <ul>
+            <li>sobji</li>
+            <li>vat</li>
+            <li>vat</li>
+        </ul>
+        </section>
+        <section class="fruits">
+            <h1 id="fruitsTitle">this is my fruits</h1>
+        <ul>
+            <li>mango</li>
+            <li>jackfruit</li>
+            <li>angur</li>
+        </ul>
+        </section>
+        <section class="fruits">
+            <h1 id="fruitsTitle1" class="one two three">this is my fruits1</h1>
+        <ul>
+            <li>lichu</li>
+            <li>koromcha</li>
+            <li>jambura</li>
+        </ul>
+        </section>
+    </main>
+    <script src="js/dom.js"></script>
+    <script>
+        //getElementsBYTagName and innerText using loop
+        const liCollection=document.getElementsByTagName('li');
+        console.log(liCollection);
+        for(const li of liCollection){
+            console.log(li.innerText);
+        }
+        //getElementsBYclassName
+        const classData=document.getElementsByClassName('fruits');
+        console.log(classData);
+        //getElementsBYIdName
+        const idData=document.getElementById('fruitsTitle');
+        console.log(idData);
+        //.innerText
+        const innerData=document.getElementById('fruitsTitle1');
+        innerData.innerText='this is my fruits1 dese paltaia js dea'
+        console.log(innerData);
+
+        //getElementsBYIdName
+        const QSData=document.querySelector('.relation li');
+        console.log(QSData);
+        //getElementsBYIdName
+        const QSAData=document.querySelectorAll('.meal li');
+        console.log(QSAData);
+
+        //.style
+        document.getElementById('fruitsTitle').style.color='red';
+        document.getElementById('fruitsTitle').style.backgroundColor="rgb(1,1,1)";
+        document.getElementById('fruitsTitle').style.textAlign="center";
+        //.getAttribute
+        const GABI=document.getElementById('fruitsTitle1');
+        const GABIa=GABI.getAttribute('id');
+        const GABCa=GABI.getAttribute('class');
+        console.log(GABI);
+        console.log(GABIa);
+        console.log(GABCa);
+        //title.classlist()
+
+        const tCL=GABI.classList;
+        console.log(tCL);
+        //this line is make operation in console
+        const title=document.getElementById('fruitsTitle1');
+        //remove class
+        GABI.classList.remove('two');
+        const rmv=GABI.classList;
+        console.log(rmv);
+        //add class
+        GABI.classList.add('four');
+        const addCls=GABI.classList;
+        console.log(addCls);
+        //setAttributes
+        // const title1=document.getElementsByClassName('relationTitle');
+        // title1.setAttribute('title1','tooltip set by java script');
+    //inner html and change korse html
+    const innerData1=document.getElementsByClassName('fruits')[0].innerHTML;
+    document.getElementsByClassName('fruits')[0].innerHTML= '<h1 id="fruitsTitle" style="color: red; background-color: rgb(1, 1, 1); text-align: center;">this is my fruits aedao paltaise moja lage</h1> <ul><li>mango</li><li>jackfruit</li><li>angur</li></ul>'
+    const innerData2=document.getElementsByClassName('fruits')[0].innerHTML;
+        console.log(innerData1);
+        console.log(innerData2);
+    </script>
+</body>
+</html>
